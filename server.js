@@ -12,7 +12,7 @@ const myServer = http.createServer((req, res) => {
             return res.end("Internal Server Error");
         }
 
-        res.end("Hello from my server! :)");
+        res.end("Hello f servthis is my server! :)");
     });
 });
 myServer.listen(8000, () => console.log("Server is turned on!"));
