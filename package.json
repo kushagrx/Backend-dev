@@ -18,5 +18,8 @@
     "js",
     "backend",
     "development"
-  ]
+  ],
+  "dependencies": {
+    "url": "^0.11.4"
+  }
 }
