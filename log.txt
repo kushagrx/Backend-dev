@@ -1,4 +1,4 @@
-1738766093948: New request received.
-1738766094077: New request received.
-1738766096255: New request received.
-1738766096289: New request received.
+New req at -> /
+New req at -> /favicon.ico
+New req at -> /about
+New req at -> /favicon.ico
