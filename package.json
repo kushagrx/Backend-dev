@@ -5,8 +5,18 @@
   "main": "hello.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "author": "kushagra singh bisht",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "learning backend"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "backend",
+    "development"
+  ]
 }
