@@ -16,3 +16,15 @@ New req at -> /about?myname=kushagra&uid=05
 New req at -> /favicon.ico
 New req at -> /about?myname=kushagra&uid=05
 New req at -> /favicon.ico
+New req at -> /about?myname=kushagra&uid=05
+New req at -> /favicon.ico
+New req at -> /?q=give%20me%20pizza&userid=05
+New req at -> /favicon.ico
+New req at -> /q?=give%20me%20pizza&userid=05
+New req at -> /favicon.ico
+New req at -> /q?=kushagra&id=05
+New req at -> /favicon.ico
+New req at -> /about
+New req at -> /favicon.ico
+New req at -> /about?myname=kushagra&uid=05
+New req at -> /favicon.ico
