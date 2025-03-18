@@ -2,6 +2,9 @@ const express = require("express");
 const users = require("./MOCK_DATA.json");
 const app = express();
 const PORT = 5000;
+const fs=require("fs");
+
+app.use(express.urlencoded({extended:false})); //added a plugin to handle form data for post req
 
 // REST API routes
 app.get("/users", (req, res) => {
@@ -18,9 +21,13 @@ app.get("/users/:id", (req, res) => {
 });
 
 app.post("/users/:id",(req,res)=>{
-    //to do: create new user
-    return res.json({status:"pending"});
-})
+    const body=req.body;
+    users.push({...body,id:users.length+1});
+    fs.writeFile("./MOCK_DATA.json",JSON.stringify(users),(err,data)=>{
+        return res.json({status:"success",id:users.length});
+    });
+});
+
 app.patch("/users/:id",(req,res)=>{
     //to do: update new user
     return res.json({status:"pending"});
