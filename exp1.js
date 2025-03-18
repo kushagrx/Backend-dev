@@ -10,6 +10,4 @@ app.get("/",(req,res)=>{
 app.get("/about",(req,res)=>{
     return res.send("Hello from About page");
 })
-// const myServer = http.createServer(app);
-// myServer.listen(8000,()=>console.log("Started on port 8000"));
 app.listen(8000,()=>console.log("Server started! "));

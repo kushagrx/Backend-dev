@@ -30,12 +30,27 @@ app.post("/users/:id",(req,res)=>{
 
 app.patch("/users/:id",(req,res)=>{
     //to do: update new user
-    return res.json({status:"pending"});
-})
-app.delete("/users/:id",(req,res)=>{
-    //to do: delete user
+    const body=req.body;
     return res.json({status:"pending"});
 })
 
+app.delete("/users/:id", (req, res) => {
+    const id = parseInt(req.params.id);  // Get the id from the URL and convert it to a number
+    const userIndex = users.findIndex(user => user.id === id);
+    if (userIndex === -1) {
+        return res.status(404).json({ status: "error", message: "User not found" });
+    }
+
+    // Remove the user at the found index
+    users.splice(userIndex, 1);
+
+    // Save the updated data
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
+        if (err) {
+            return res.status(500).json({ status: "error", message: "Failed to write data" });
+        }
+        return res.json({ status: "success", id });
+    });
+});
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
