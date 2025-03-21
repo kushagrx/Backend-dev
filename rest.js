@@ -2,9 +2,40 @@ const express = require("express");
 const users = require("./MOCK_DATA.json");
 const app = express();
 const PORT = 5000;
+const mongoose = require("mongoose");
 const fs=require("fs");
 
 app.use(express.urlencoded({extended:false})); //added a plugin to handle form data for post req
+
+//connection for mongo
+mongoose.connect('mongodb://127.0.0.1:27017/my-first-db')
+        .then(()=>console.log("MongoDB successfully connected"))
+        .catch((err)=>console.log("Mongo error",err));
+
+//schema for mongodb
+const userSchema=new mongoose.Schema({
+    firstName:{
+        type: String,
+        required: true,
+    },
+    lastName:{
+        type: String,
+    },
+    email:{
+        type: String,
+        required: true,
+        unique: true,
+    },
+    jobTitle:{
+        type: String,
+    },
+    gender:{
+        type: String,
+    }
+})
+
+const User = mongoose.model("user",userSchema);
+
 
 // REST API routes
 app.get("/users", (req, res) => {

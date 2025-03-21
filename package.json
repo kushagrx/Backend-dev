@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node rest.js",
+    "start2": "node middleware.js",
     "go": "node exp1.js"
   },
   "author": "kushagra singh bisht",
